@@ -101,9 +101,12 @@ HashSet: The HashSet as a value in HashMap stores all the neighbors connected to
 Read all the transactions from batch_payment.txt to initialize the graph.
 
 Read one transaction each time from stream_payment.txt and process it.
-Feature 1: check if two users are neighbors in the graph.
-Feature 2: check if two users are connected to one common user.
-Feature 3: check if two users are connected within 4 degree by using two-way BFS.
+
+	Feature 1: check if two users are neighbors in the graph.
+
+	Feature 2: check if two users are connected to one common user.
+
+	Feature 3: check if two users are connected within 4 degree by using two-way BFS.
 
 ##Description of Data
 
