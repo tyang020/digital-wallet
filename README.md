@@ -98,15 +98,17 @@ HashSet: The HashSet as a value in HashMap stores all the neighbors connected to
 
 ###Explanation of Algorithm
 
-Read all the transactions from batch_payment.txt to initialize the graph.
+Read all the transactions from batch_payment.txt to initialize the graph. For each transaction, since the graph is undirected, we need to add user1 to the neighbors of user2 and add user2 to the neighbors of user1.
 
-Read one transaction each time from stream_payment.txt and process it.
+Read one transaction each time from stream_payment.txt and process it. user1 and user2 are users in this transaction.
 
-	Feature 1: check if two users are neighbors in the graph.
+	Feature 1: check if two users are neighbors in the graph. Get the set of neighbors connected to user1 from graph HashMap and check if user2 is in that set. If not, warning triggers.
 
-	Feature 2: check if two users are connected to one common user.
+	Feature 2: check if two users are connected to one common user. Get the set of neighbors connected to user1. For each neighbor of user1, check if it is in the set of neighbors connected to user2. If not, warning triggers. 
 
-	Feature 3: check if two users are connected within 4 degree by using two-way BFS.
+	Feature 3: check if two users are connected within 4 degree by using two-way BFS. Use a begin set which is initialized by user1 and an end set which is initialized by user2. Traverse the partial graph from user1 and user2 to check if they have common neighbors within 4 levels. If not, warning triggers.
+	
+Write the results to output files.
 
 ##Description of Data
 
